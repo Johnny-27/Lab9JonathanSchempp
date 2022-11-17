@@ -73,9 +73,17 @@ void CompletedItems()
     UserMenu();
 }
 
+void StatsView()
+{
+    Console.WriteLine("To-Do list stats:");
+    Console.WriteLine($"Tasks Created: {TasksCreated} \nTasks Completed: {TasksCompleted} \nTime Spent on Tasks {EndTime-StartTime}");
+    Console.ReadLine();
+    UserMenu();
+}
+
 void UserMenu(){
     Console.WriteLine("Please select an option");
-    Console.WriteLine("1) Add items to the To-Do list\n2) Mark an item as complete\n3) See your To-Do items\n4) See your completed items\n5) Finish");
+    Console.WriteLine("1) Add items to the To-Do list \n2) Mark an item as complete \n3) See your To-Do items \n4) See your completed items \n5) Show stats view \n6) Finish");
     string response = Console.ReadLine();
     if(response == "1")
         Adding();
@@ -86,6 +94,8 @@ void UserMenu(){
     if(response == "4")
         CompletedItems();
     if(response == "5")
+        StatsView();
+    if(response == "6")
         System.Environment.Exit(0);
     else
     {
